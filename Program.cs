@@ -15,22 +15,15 @@
 
             Console.WriteLine("----------------------");
 
-
             FanLoop fan = new FanLoop();
             String input = "";
-            int status = 0;
-
-            while (input != "keluar")
-            {
+            while (input != "keluar") { 
                 Console.WriteLine("Masukkan perintah (modeUp, modeDown, turboShortcut, keluar)");
                 input = Console.ReadLine();
-
-
-                if (Enum.TryParse(input, out kegiatan kegiatan))
+                if(Enum.TryParse(input, out kegiatan kegiatan))
                 {
                     fan.ubahFan(kegiatan);
                     fan.getStatusFan();
-                    status = status + 1;
                 }
                 else
                 {
